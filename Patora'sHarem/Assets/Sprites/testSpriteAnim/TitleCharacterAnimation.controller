@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Image
+  m_Name: TitleCharacterAnimation
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -103,7 +103,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102752469719240410}
-    m_Position: {x: 264, y: 60, z: 0}
+    m_Position: {x: 276, y: -12, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102524559710271960}
     m_Position: {x: 504, y: 132, z: 0}

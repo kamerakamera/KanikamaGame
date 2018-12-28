@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
     float avoidInterval,avoidCoolTime;
     float knockBackTime = 0,invincibleCoolTime = 0,avoidIntervalCount,avoidCoolTimeCount;
     RaycastHit hit;
-    bool isKnockBack, isAvoid, avoidAble, lockOnShotAble, avoidInput;
+    bool isKnockBack,isAvoid, avoidAble, lockOnShotAble, avoidInput;
     Vector3 moveDirection;
     bool front,back,right,left,up;
     int straight, side;
@@ -212,7 +212,7 @@ public class Player : MonoBehaviour {
         //SceneManager.LoadScene("End");
     }
 
-    public bool GetAvoid(){
+    public bool GetIsAvoid(){
         return isAvoid;
     }
 }

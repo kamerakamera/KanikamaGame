@@ -17,7 +17,7 @@ public class MonotoneView : MonoBehaviour {
 	}
 
 	void OnRenderImage(RenderTexture src,RenderTexture dest){
-		if(player.GetAvoid()){
+		if(player.GetIsAvoid()){
 			Graphics.Blit(src,dest,monotone);
 		}else{
 			Graphics.Blit(src,dest,_default);

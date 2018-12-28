@@ -1,40 +1,44 @@
 fileFormatVersion: 2
-guid: c9ed97139d6e30b4685f9b6c051ac47f
+guid: eec69f8234101644ea5e9ca5cf6c776e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube.001
-    100004: Cube.002
-    100006: Cube.003
-    100008: Cylinder
-    100010: //RootNode
-    400000: Cube
-    400002: Cube.001
-    400004: Cube.002
-    400006: Cube.003
-    400008: Cylinder
-    400010: //RootNode
-    2100000: Material.003
-    2100002: Material.002
-    2100004: Material
-    2100006: Material.001
+    100000: Armature
+    100002: Bone
+    100004: Bone_end
+    100006: Cube
+    100008: Cube.001
+    100010: Cube.002
+    100012: Cube.003
+    100014: Cylinder
+    100016: //RootNode
+    400000: Armature
+    400002: Bone
+    400004: Bone_end
+    400006: Cube
+    400008: Cube.001
+    400010: Cube.002
+    400012: Cube.003
+    400014: Cylinder
+    400016: //RootNode
+    2100000: Material.001
+    2100002: Material
+    2100004: Material.003
+    2100006: Material.002
     2100008: Material.004
-    2300000: Cube
-    2300002: Cube.001
-    2300004: Cube.002
-    2300006: Cube.003
-    2300008: Cylinder
-    3300000: Cube
-    3300002: Cube.001
-    3300004: Cube.002
-    3300006: Cube.003
-    3300008: Cylinder
-    4300000: Cylinder
-    4300002: Cube.002
-    4300004: Cube.001
-    4300006: Cube
+    4300000: Cube
+    4300002: Cube.001
+    4300004: Cylinder
+    4300006: Cube.002
     4300008: Cube.003
+    7400000: Armature|LeftSpin
+    7400002: Armature|RightSpin
+    9500000: //RootNode
+    13700000: Cube
+    13700002: Cube.001
+    13700004: Cube.002
+    13700006: Cube.003
+    13700008: Cylinder
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -86,8 +90,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -112,7 +116,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

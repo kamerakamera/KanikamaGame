@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
     public float MovePower { get; set; }
     public float StartMovePower { get; set; }
     public Image damegeFlash;
+    [SerializeField]private GameObject avoidparticle;
+    [SerializeField]Animator animator;
     
 
     // Use this for initialization
@@ -51,7 +53,11 @@ public class Player : MonoBehaviour {
             MoveInput();
             AvoidInput();
         }
-        
+        if(isAvoid){
+            avoidparticle.SetActive(true);
+        }else if(!isAvoid){
+            avoidparticle.SetActive(false);
+        }
     }
 
     void FixedUpdate() {
@@ -73,6 +79,10 @@ public class Player : MonoBehaviour {
         }
         if(!isAvoid && !avoidAble) {
             IntervalCount(ref avoidCoolTimeCount, avoidCoolTime, ref avoidAble, true);
+            if(avoidAble){
+                animator.SetBool("LeftSpin",false);
+                animator.SetBool("RightSpin",false);
+            }
         }
 
         //無敵時間
@@ -96,7 +106,7 @@ public class Player : MonoBehaviour {
     void LookAround() {
         mousePosition = Input.mousePosition;
         float mousePositionX = Input.GetAxis("Mouse X");
-        //縦回転
+        //縦回転はなし
         //横回転
         transform.Rotate(0, mousePositionX * rotateSensitivityPower, 0, Space.World);
     }
@@ -154,6 +164,17 @@ public class Player : MonoBehaviour {
         }
         moveDirection = new Vector3(transform.forward.x * straight + transform.right.x * side, rb.velocity.y, transform.forward.z * straight + transform.right.z * side).normalized;
         rb.velocity = new Vector3(moveDirection.x * MovePower * 4.0f, rb.velocity.y, moveDirection.z * MovePower * 4.0f);
+        Debug.Log(moveDirection);
+        if(Vector3.Cross(moveDirection,new Vector3(0,0,1)).y < 0){
+            avoidparticle.transform.rotation = Quaternion.Euler(new Vector3(0,Vector3.Angle(moveDirection,new Vector3(0,0,1)) + 180,0));
+        }else{
+            avoidparticle.transform.rotation = Quaternion.Euler(new Vector3(0,-Vector3.Angle(moveDirection,new Vector3(0,0,1)) + 180,0));
+        }if(side < 0){
+            animator.SetBool("RightSpin",true);
+        }else{
+            animator.SetBool("LeftSpin",true);
+        }
+        
     }
 
     void IntervalCount(ref float count, float intervalTime, ref bool isTrigger, bool setBool) {

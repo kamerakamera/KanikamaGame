@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrackingPlayerPos : MonoBehaviour {
-	[SerializeField]private GameObject player;
+public class Kyouryu : Enemy {
+	
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +11,10 @@ public class TrackingPlayerPos : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = player.transform.position;
+		
+	}
+
+	override protected void Dead(){
+		Destroy(this.gameObject);
 	}
 }

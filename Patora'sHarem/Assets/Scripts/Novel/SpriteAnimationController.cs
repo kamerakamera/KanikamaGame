@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterAnimationController : MonoBehaviour {
+public class SpriteAnimationController : MonoBehaviour {
 	[SerializeField]private Animator animator;
 	// Use this for initialization
 	void Start () {

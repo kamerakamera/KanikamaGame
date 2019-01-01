@@ -27,6 +27,7 @@ public class Player : MonoBehaviour {
     public Image damegeFlash;
     [SerializeField]private GameObject avoidparticle;
     [SerializeField]Animator animator;
+    private float createOffset = 3.0f;
     
 
     // Use this for initialization
@@ -47,7 +48,7 @@ public class Player : MonoBehaviour {
             Death();
         }
         else {
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) && !isAvoid) {
                 Shot();
             }
             MoveInput();
@@ -103,10 +104,21 @@ public class Player : MonoBehaviour {
         }
     }
 
+    /*        mousePosition = Input.mousePosition;
+        float mousePositionX = Input.GetAxis("Mouse X");
+        float mousePositionY = Input.GetAxis("Mouse Y");
+        //縦回転
+        if (transform.localEulerAngles.x - mousePositionY <= 290 && transform.localEulerAngles.x - mousePositionY >= 180) {
+            transform.Rotate(290 - transform.localEulerAngles.x, 0, 0);
+        } else if (transform.localEulerAngles.x - mousePositionY >= 70 && transform.localEulerAngles.x - mousePositionY <= 180) {
+            transform.Rotate(70 - transform.localEulerAngles.x, 0, 0);
+        } else transform.Rotate(-mousePositionY * rotateSensitivityPower, 0, 0);
+        //横回転
+        transform.Rotate(0, mousePositionX * rotateSensitivityPower, 0, Space.World); */
     void LookAround() {
         mousePosition = Input.mousePosition;
         float mousePositionX = Input.GetAxis("Mouse X");
-        //縦回転はなし
+        //縦回転
         //横回転
         transform.Rotate(0, mousePositionX * rotateSensitivityPower, 0, Space.World);
     }
@@ -186,7 +198,7 @@ public class Player : MonoBehaviour {
     }
 
     void Shot() {
-        Instantiate(Bullet,transform.position,transform.rotation);
+        Instantiate(Bullet,transform.position + transform.forward * createOffset,transform.rotation);
     }
 
     public void Damege() {

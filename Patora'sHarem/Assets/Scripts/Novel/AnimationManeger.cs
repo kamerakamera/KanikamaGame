@@ -8,7 +8,7 @@ public class AnimationManeger : MonoBehaviour {
 	[SerializeField]string[] eventName;
 	[SerializeField]int[] eventLine;
 	int actionCount;
-	[SerializeField]CharacterAnimationController characterAnimationController;
+	[SerializeField]SpriteAnimationController spriteAnimationController;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +23,7 @@ public class AnimationManeger : MonoBehaviour {
 	public void ExecuteAnimation(int textLineNum){
 		foreach(int num in eventLine){
 			if(num == textLineNum){
-				characterAnimationController.SetAnimationBool(eventName[actionCount]);
+				spriteAnimationController.SetAnimationBool(eventName[actionCount]);
 				actionCount++;
 			}
 		}
